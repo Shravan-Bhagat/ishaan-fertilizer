@@ -2,15 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #f8faf6;
-  --foreground: #1c281e;
+@layer base {
+  :root {
+    /* Color Tokens (HSL values for Tailwind opacity support) */
+    /* Background & Text */
+    --background: 80 22% 97%;        /* #f7f9f5 - Warm organic off-white */
+    --foreground: 140 25% 12%;       /* #162419 - Deep forest charcoal */
+
+    /* Cards & Surfaces */
+    --card: 0 0% 100%;               /* #ffffff - Crisp pure white */
+    --card-foreground: 140 25% 12%;  /* #162419 - Slate charcoal */
+
+    /* Primary - Deep Rich Agricultural Forest Green */
+    --primary: 154 44% 20%;          /* #1c4b36 - Rich natural forest green */
+    --primary-foreground: 0 0% 100%; /* #ffffff - Pure white text */
+
+    /* Secondary - Fertile Earth Brown */
+    --secondary: 22 35% 26%;         /* #593b2a - Rich soil brown */
+    --secondary-foreground: 40 40% 96%; /* #fcf9f2 - Warm cream text */
+
+    /* Accent - Sunlit Harvest Gold */
+    --accent: 38 75% 54%;            /* #e5a43b - Warm harvest amber/gold */
+    --accent-foreground: 20 45% 12%; /* #2c1a0c - Dark earth text */
+
+    /* Muted Surface & Text */
+    --muted: 100 20% 93%;            /* #eaefe6 - Soft sage tint */
+    --muted-foreground: 140 10% 40%; /* #556658 - Muted soil slate */
+
+    /* Borders & Inputs */
+    --border: 120 14% 86%;           /* #d4ded1 - Soft natural border */
+    --input: 120 14% 86%;            /* #d4ded1 */
+    --ring: 154 44% 24%;             /* #235d44 - Focus ring */
+
+    /* Feedback States */
+    --success: 138 65% 36%;          /* #219643 - Fresh crop green */
+    --success-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;        /* #dc2626 - Warning / alert red */
+    --destructive-foreground: 0 0% 100%;
+
+    /* Radius Design Token */
+    --radius: 0.75rem;
+  }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  margin: 0;
-  padding: 0;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
 }
+

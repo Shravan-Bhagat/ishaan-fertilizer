@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Ishaan Fertilizer | Vasudhaan - Sustainable Organic Farming",
@@ -12,10 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="min-h-screen flex flex-col bg-stone-50 text-stone-900 antialiased">
+    <html lang="en" className={`${plusJakartaSans.variable}`}>
+      <body className="min-h-screen flex flex-col bg-background text-foreground font-sans antialiased">
         {children}
       </body>
     </html>
   );
 }
+
