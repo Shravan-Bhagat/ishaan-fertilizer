@@ -4,8 +4,8 @@ import { Badge, Button, Card, CardContent, CardHeader, CardTitle } from "@/compo
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-6 md:p-12 text-center bg-background">
-      <Card className="max-w-2xl bg-card border-border shadow-sm p-2 sm:p-4">
+    <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center bg-background">
+      <Card className="max-w-2xl w-full bg-card border-border shadow-sm p-2 sm:p-4">
         <CardHeader className="border-b-0 pb-2">
           <div className="flex justify-center mb-2">
             <Badge variant="accent">Brand: Vasudhaan</Badge>
@@ -21,7 +21,7 @@ export default function Home() {
         <CardContent className="space-y-6 pt-0">
           <div className="p-4 bg-muted/60 rounded-xl border border-border text-foreground text-sm leading-relaxed">
             Welcome to the official digital platform of <strong>Ishaan Fertilizer</strong> (Satara District, Maharashtra).
-            Day 1 foundation active &amp; Day 2 Design System established.
+            Day 1 foundation &amp; Day 2 Design System active. Day 3 Website Shell integrated.
           </div>
 
           <div className="border-t border-border pt-6">
@@ -46,7 +46,8 @@ export default function Home() {
           </div>
         </CardContent>
       </Card>
-    </main>
+    </section>
   );
 }
+
 
